@@ -8,36 +8,36 @@ jmp mulai
         tampung_nama db 30,?,30 dup (?)
         tampung_nik db 30,?,30 dup (?)
         tampung_no db 30,?,30 dup (?)
-    j1      db 0dh, 0ah,"---- PROGRAM PERSEWAAN TENDA ----", '$'  
+    j1      db 0dh, 0ah,"---- PROGRAM PERSEWAAN SEPEDA ----", '$'  
     j2      db 0dh, 0ah,"         ", '$'
     j3      db 0dh, 0ah,"Silakan masukkan data diri anda." , '$' 
-    j4      db 0dh, 0dh, 0dh, 0ah, 0dh, 0ah, "Selamat datang di persewaan tenda Adventure....", '$' 
+    j4      db 0dh, 0dh, 0dh, 0ah, 0dh, 0ah, "Selamat datang di persewaan sepeda Abah....", '$' 
     j5      db 0dh, 0ah," "
-            db 0dh, 0ah, "Berikut tenda yang tersedia saat ini (max 2 hari): ", 0dh, 0ah      
+            db 0dh, 0ah, "Berikut sepeda yang tersedia saat ini (max 3 hari): ", 0dh, 0ah      
 
             db "=======================================================", 0dh, 0ah
-            db "|| 1. Tenda Kapasitas 2     (1 hari) Rp. 20.000      ||", 0dh, 0ah  
-            db "|| 2. Tenda Kapasitas 2     (2 hari) Rp. 38.000      ||", 0dh, 0ah
-            db "|| 3. Tenda Kapasitas 4     (1 hari) Rp. 40.000      ||", 0dh, 0ah
-            db "|| 4. Tenda Kapasitas 4     (2 hari) rp. 58.000      ||", 0dh, 0ah 
-            db "|| 5. Tenda Kapasitas 6     (1 hari) Rp. 60.000      ||", 0dh, 0ah
-            db "|| 6. Tenda Kapasitas 6     (2 hari) Rp. 78.000      ||", 0dh, 0ah
-            db "|| 7. Tenda Pramuka         (1 hari) Rp. 25.000      ||", 0dh, 0ah
-            db "|| 8. Tenda Pramuka         (2 hari) Rp. 32.000      ||", 0dh, 0ah
+            db "|| 1. Sepeda      (1 jam) Rp. 12.000      ||", 0dh, 0ah  
+            db "|| 2. Sepeda      (2 jam) Rp. 20.000      ||", 0dh, 0ah
+            db "|| 3. Sepeda      (3 jam) Rp. 30.000      ||", 0dh, 0ah
+            db "|| 4. Sepeda      (5 jam) rp. 38.000      ||", 0dh, 0ah 
+            db "|| 5. Sepeda      (12 jam) Rp. 40.000      ||", 0dh, 0ah
+            db "|| 6. Sepeda      (24 jam) Rp. 70.000      ||", 0dh, 0ah
+            db "|| 7. Sepeda      (2 hari) Rp. 120.000      ||", 0dh, 0ah
+            db "|| 8. Sepeda      (3 hari) Rp. 200.000      ||", 0dh, 0ah
             db "=======================================================", 0dh, 0ah
-            db 0dh, 0ah, "Tenda nomor berapa yang akan anda sewa ? ", '$'
+            db 0dh, 0ah, "Sepeda nomor berapa yang akan anda sewa ? ", '$'
     j6      db 0dh, 0ah, 0dh, 0ah, "Proses berhasil, berikut rinciannya :", '$'                                          
-    j7      db 0dh, 0ah,0dh, 0ah, "Tenda bisa diambill di kasir setelah pembayaran",0dh, 0ah, "Terima kasih atas kunjungan anda...", '$'
-    j8      db 0dh, 0ah, 0dh, 0ah,"Apakah ada tambahan tenda yang disewa ?(Y, N)", '$'
+    j7      db 0dh, 0ah,0dh, 0ah, "Sepeda bisa dipilih dan dibawa setelah pembayaran",0dh, 0ah, "Terima kasih atas kunjungan anda...", '$'
+    j8      db 0dh, 0ah, 0dh, 0ah,"Apakah ada tambahan sepeda yang disewa ?(Y, N)", '$'
     salah   db 0dh, 0ah, "Tidak ada pilihan.", '$'
-    hsl1    db 0dh, 0ah, 0dh, 0ah, "Tenda Kapasitas 2  (1 hari)",0dh, 0ah, "Harga              Rp.20.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
-    hsl2    db 0dh, 0ah, 0dh, 0ah, "Tenda Kapasitas 2  (2 hari)",0dh, 0ah, "Harga              Rp.38.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
-    hsl3    db 0dh, 0ah, 0dh, 0ah, "Tenda Kapasitas 4  (1 hari)",0dh, 0ah, "Harga              Rp.40.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
-    hsl4    db 0dh, 0ah, 0dh, 0ah, "Tenda Kapasitas 4  (2 hari)",0dh, 0ah, "Harga              Rp.58.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
-    hsl5    db 0dh, 0ah, 0dh, 0ah, "Tenda Kapasitas 6  (1 hari)",0dh, 0ah, "Harga              Rp.60.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
-    hsl6    db 0dh, 0ah, 0dh, 0ah, "Tenda Kapasitas 6  (2 hari)",0dh, 0ah, "Harga              Rp.78.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
-    hsl7    db 0dh, 0ah, 0dh, 0ah, "Tenda Pramuka  (1 hari)",0dh, 0ah, "Harga           Rp.25.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
-    hsl8    db 0dh, 0ah, 0dh, 0ah, "Tenda Pramuka  (2 hari)",0dh, 0ah, "Harga           Rp.32.000",0dh, 0ah,0dh, 0ah, "Tenda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl1    db 0dh, 0ah, 0dh, 0ah, "Sepeda   (1 jam)",0dh, 0ah, "Harga              Rp.12.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl2    db 0dh, 0ah, 0dh, 0ah, "Sepeda   (2 jam)",0dh, 0ah, "Harga              Rp.20.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl3    db 0dh, 0ah, 0dh, 0ah, "Sepeda   (3 jam)",0dh, 0ah, "Harga              Rp.30.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl4    db 0dh, 0ah, 0dh, 0ah, "Sepeda   (5 jam)",0dh, 0ah, "Harga              Rp.38.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl5    db 0dh, 0ah, 0dh, 0ah, "Sepeda   (12 jam)",0dh, 0ah, "Harga              Rp.40.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl6    db 0dh, 0ah, 0dh, 0ah, "Sepeda   (24 jam)",0dh, 0ah, "Harga              Rp.70.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl7    db 0dh, 0ah, 0dh, 0ah, "Sepeda (1 hari)",0dh, 0ah, "Harga           Rp.120.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
+    hsl8    db 0dh, 0ah, 0dh, 0ah, "Sepeda (2 hari)",0dh, 0ah, "Harga           Rp.200.000",0dh, 0ah,0dh, 0ah, "Sepeda harap dikembalikan pada waktunya dengan kondisi utuh." , '$'
 
 mulai:
     mov ah,09h
@@ -93,28 +93,28 @@ Proses1:
     INT 21h
     
     CMP al, '1'
-    JE tenda1_1hari
+    JE sepeda1_1jam
     
     CMP al, '2'
-    JE tenda1_2hari
+    JE sepeda1_2jam
     
     CMP al, '3'
-    JE tenda2_1hari   
+    JE sepeda2_3jam   
     
     CMP al, '4'
-    JE tenda2_2hari    
+    JE sepeda2_5jam    
       
     CMP al, '5'
-    JE tenda3_1hari
+    JE sepeda3_12jam
     
     CMP al, '6'
-    JE tenda3_2hari
+    JE sepeda3_24jam
     
     CMP al, '7'
-    JE tenda4_1hari
+    JE sepeda4_2hari
     
     CMP al, '8'
-    JE tenda4_2hari
+    JE sepeda4_3hari
           
     JNE input_salah 
     
@@ -139,7 +139,7 @@ Proses2:
     
     JNE input_salah
 
-tenda1_1hari:
+sepeda1_1jam:
      MOV ah, 09
      LEA dx, j6
      INT 21h
@@ -150,7 +150,7 @@ tenda1_1hari:
      
      JMP Proses2
      
-tenda1_2hari:
+sepeda1_2jam:
      MOV ah, 09
      LEA dx, j6
      INT 21h
@@ -162,7 +162,7 @@ tenda1_2hari:
      
      JMP Proses2
 
-tenda2_1hari:
+sepeda2_3jam:
      MOV ah, 09
      LEA dx, j6
      INT 21h
@@ -173,7 +173,7 @@ tenda2_1hari:
      
      JMP Proses2 
      
-tenda2_2hari:
+sepeda2_5jam:
      MOV ah, 09
      LEA dx, j6
      INT 21h
@@ -184,7 +184,7 @@ tenda2_2hari:
      
      JMP Proses2
      
-tenda3_1hari:
+sepeda3_12jam:
      MOV ah, 09
      LEA dx, j6
      INT 21h
@@ -195,7 +195,7 @@ tenda3_1hari:
      
      JMP Proses2 
      
-tenda3_2hari:
+sepeda3_24jam:
      MOV ah, 09
      LEA dx, j6 
      INT 21h
@@ -206,7 +206,7 @@ tenda3_2hari:
      
      JMP Proses2
      
-tenda4_1hari:
+sepeda4_2hari:
      MOV ah, 09
      LEA dx, j6
      
@@ -216,7 +216,7 @@ tenda4_1hari:
      
      JMP Proses2
      
-tenda4_2hari:
+sepeda4_3hari:
      MOV ah, 09
      LEA dx, j6
      INT 21h
@@ -246,4 +246,4 @@ input_salah:
 
 JMP Exit
 Exit:
-RET  
+RET                        
